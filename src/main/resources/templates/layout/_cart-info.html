@@ -1,0 +1,9 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="card bg-light">
+        <div class="card-body text-center">
+            <i class="bi bi-cart" style="color: orangered; font-size: larger;"></i>
+            <a ng-if="cart.count == 0" class="text-decoration-none">0 Items</a>
+            <a th:href="@{/cart/view}" ng-if="cart.count != 0" class="text-decoration-none">{{cart.count}} items * {{cart.amount | number : 2}}$</a>
+        </div>
+    </div>
+</div>

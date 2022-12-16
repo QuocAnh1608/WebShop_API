@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Acount EDITION</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-4 text-center">
+				<label for="image"> <img
+					ng-src="{{'/assets/images/'+ form.account.photo }}"
+					style="max-width: 100%;">
+
+				</label>
+			</div>
+			<div class="col-sm-8">
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<div>Username</div>
+						<input ng-model="form.account.username" class="form-control">
+					</div>
+					 <div class="form-group col-sm-6">
+                        <div>Category</div>
+                        <select ng-model="form.role.id" class="form-control">
+                            <option ng-repeat="c in roles" ng-value="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer text-center">
+		
+		<button ng-click="save()" class="btn btn-success">
+			<b class="glyphicon glyphicon-save"></b> Save
+		</button>
+		<button ng-click="delete_auth(form)" class="btn btn-danger">
+			<b class="glyphicon glyphicon-trash"></b> Delete
+		</button>
+		
+	</div>
+</div>

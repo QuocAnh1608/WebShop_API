@@ -1,0 +1,10 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="list-group">
+        <div class="card-title">
+            <b class="glyphicon glyphicon-briefcase" style="font-size: larger;"></b> Danh mục
+        </div>
+        <div class="list-group hool">
+            <a th:each="c:${cates}" th:href="@{|/product/list?cid=${c.id}|}" class="list-group-item" >[[${c.name}]]</a>
+        </div>
+    </div>
+</div>

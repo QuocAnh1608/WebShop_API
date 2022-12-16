@@ -1,0 +1,22 @@
+<ul class="nav nav-tabs" style="font-variant: small-caps;">
+    <li><a data-toggle="tab" data-target="#edit" href="">Account Edition</a></li>
+     <li ><a data-toggle="tab" data-target="#account" href="">List Account</a></li>
+      <li ><a data-toggle="tab" data-target="#authority" href="">Authorities edit</a></li>
+    <li class="active" ><a data-toggle="tab" data-target="#list" href="">List of Authority</a></li>
+   
+</ul>
+<div class="tab-content">
+    <div id="edit" class="tab-pane fade">
+        <div ng-include="'account/_form.html'"></div>
+    </div>
+    <div id="account" class="tab-pane fade ">
+        <div ng-include="'account/_table_Account.html'"></div>
+    </div>
+    <div id="authority" class="tab-pane fade ">
+        <div ng-include="'account/_form_authority.html'"></div>
+    </div>
+    <div id="list" class="tab-pane fade in active">
+        <div ng-include="'account/_table.html'"></div>
+    </div>
+    
+</div>

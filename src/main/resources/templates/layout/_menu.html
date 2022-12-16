@@ -1,0 +1,52 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <!-- <nav class="navbar navbar-inverse navbar-light bg-light" style="font-variant: small-caps;">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/}">Home</a></li>
+                <th:block th:if="${#request.remoteUser}">
+                    
+                    <li><a th:href="@{/order/list}">Your Orders</a></li>
+                    <li sec:authorize="hasAnyRole('DIRE','STAF')">
+                        <a th:href="@{/admin/home/index}">Administration</a>
+                    </li>
+                    <li><a th:href="@{/security/logoff}">Sign out</a></li>
+                </th:block>
+                <th:block th:unless="${#request.remoteUser}">
+                    <li><a th:href="@{/security/login/form}">Sign in</a></li>
+                </th:block>
+            </ul>
+            <ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right">
+                <li><a href="#">Welcome [[${#request.remoteUser}]]</a></li>
+            </ul>
+        </div>
+    </nav> -->
+    <nav class="navbar navbar-inverse navbar-expand-lg bg-info" style="font-size: large;" >
+        <div class="container holo">
+            <ul class="nav navbar-nav ">
+                <a class="nav-link active " aria-current="page" th:href="@{/}">Home</a>
+                <th:block class="nav-link" th:if="${#request.remoteUser}">
+                    <li>
+                        <a class="nav-link " th:href="@{/order/list}">Your Orders</a>
+                    </li>
+                    <li sec:authorize="hasAnyRole('DIRE','STAF')">
+                        <a class="nav-link " th:href="@{/admin/home/index}">Administration</a>
+                    </li>
+                    <li>
+                        <a class="nav-link " th:href="@{/security/logoff}">Sign out</a>
+                    </li>
+                </th:block>
+                
+            </ul>
+            <th:block class="nav-link active" aria-current="page" th:unless="${#request.remoteUser}">
+                    <li style="list-style: none;">
+                        <a th:href="@{/security/login/form}" class="text-decoration-none ">Sign in</a>
+                    </li>
+            </th:block>
+            <ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right ">
+                <li >
+                    <a href="#" class=" text-decoration-none">Welcome: [[${#request.remoteUser}]]</a>
+                </li>
+            </ul>
+        </div>   
+      </nav>
+</div>

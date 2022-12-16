@@ -1,0 +1,89 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index::dynamic(~{::main})}">
+	<main>
+		<!-- <form th:action="@{/security/login}" method="post" >
+			<div class="card ">
+				<div class="card-body">LOGIN</div>
+			</div>
+			<div class="card-body">
+				<div class="form-group">
+					<div>Username:</div>
+					<input class="form-control" name="username">
+				</div>
+				<div class="form-group">
+					<div>Password:</div>
+					<input type="password" name="password" class="form-control">
+				</div>
+				<br>
+				<div class="form-group">
+					<div class="form-control">
+						<lable class="checkbox-inline">
+							<input type="checkbox" name="remember-me"> Remember me?
+						</lable>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer text-right">
+				<i class="pull-left text-danger" th:text="${message}"></i>
+				<button class="btn btn-success">Login</button>
+				
+			</div>
+		</form> -->
+		<section class="h-100 gradient-form" style="background-color: #eee;">
+			<div class="container py-5 h-100">
+			  <div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-xl-10">
+				  <div class="card rounded-3 text-black">
+					<div class="row g-0">
+					  <div class="col-lg-6">
+						<div class="card-body p-md-5 mx-md-4">
+						  <div class="text-center">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+							  style="width: 185px;" alt="logo">
+							<h4 class="mt-1 mb-5 pb-1">Login</h4>
+						  </div>
+						  <form th:action="@{/security/login}" method="post" >
+							<i class="pull-left text-danger" th:text="${message}"></i>
+						
+							<div class="card-body">
+								<div class="form-group">
+									<div>Username:</div>
+									<input class="form-control" name="username">
+								</div>
+								<div class="form-group">
+									<div>Password:</div>
+									<input type="password" name="password" class="form-control">
+								</div>
+								<br>
+								<div class="form-group">
+									<div class="form-control">
+										<lable class="checkbox-inline">
+											<input type="checkbox" name="remember-me"> Remember me?
+										</lable>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer text-right">
+								
+								<button class="btn btn-success">Login</button>
+								
+							</div>
+						</form>
+		  
+						</div>
+					  </div>
+					  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+						<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+						  <h4 class="mb-4">We are more than just a shop</h4>
+						  <p class="small mb-0">It is a new kind of shopping comparison site that offers the most comprehensive shopping experience on the web. 
+							Our shopping experts have drawn on their industry experience and insider connections to bring you the best 
+							collection of the stores you can't live without, and the brands and products you love - all in one place..</p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+	</main>
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java 6 - ASM</title>
+
+<link href="/assets/css/shopping-cart-app.css" rel="stylesheet">
+<link href="/assets/css/login.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+	rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+</head>
+
+<style>
+	.hool a:hover{
+		background-color: gold;
+		color: red;
+	}
+	.holo a{
+		
+		color: white;
+	}
+	.holo a:hover{
+		
+		color: red;
+	}
+
+</style>
+<body class="container p-0" 
+ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+	<header class="row">
+			
+		<img src="/assets/banner.jpg" alt="" width="100%" height="400px">
+	</header>
+	<nav class="row pt-1">
+		<div th:replace="/layout/_menu.html"></div>
+	</nav>
+	<div class="row pt-1">
+		<article class="col-sm-3">
+			<div th:replace="/layout/_cart-info.html"></div>
+			<hr>
+			<div style="width: 100%; margin-bottom: 10px;" class=" pt-2">
+				<form th:action="@{/product/search}" method="post" >
+					<label class="form-label">Search</label> <br>
+					<input type="text" class="form-control" name="keyword">
+					<button style="margin-top: 3px;" class="btn btn-primary">Search</button>
+				</form>
+            </div>
+			<hr>
+			<div th:replace="/layout/_category.html"></div>
+			
+		</article>
+		<aside class="col-sm-9">
+			<div th:replace="${main}"></div>
+		</aside>
+	</div>
+	<br>
+	<footer class="row">
+		<div class="card ">
+			<div class="card-body text-center">
+				<h4>PS17999 Nguyễn Hoàng Quốc Anh. FPT Polytechnic &copy; 2022.</h4>
+			</div>
+		</div>
+	</footer>
+	<script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+</html>
